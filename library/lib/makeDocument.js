@@ -1,17 +1,9 @@
-import Document from 'next/document';
+import Document from "next/document";
 
-import extendsWithMui from './extendsMui';
+import extendsDocument from "./extendsDocument";
 
-import defaultTheme from './defaultTheme';
-
-// import compose from '../util/compose';
-
-/**
- * Making _document from next/document.
- * Including material-ui.
- * @param {MUITheme} theme
- */
-const makeNextDocument = theme => extendsWithMui(theme || defaultTheme)(Document);
+const makeNextDocument = (applyBootstrap, DocumentComponent = Document) =>
+  extendsDocument(applyBootstrap)(DocumentComponent);
 
 export default makeNextDocument;
 

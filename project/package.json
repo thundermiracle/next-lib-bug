@@ -8,8 +8,8 @@
     "build": "next build"
   },
   "dependencies": {
-    "@material-ui/core": "^4.3.0",
     "next": "^9.0.2",
+    "next-mui-helper": "file:../library/dist",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   }

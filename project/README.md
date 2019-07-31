@@ -1,1 +1,1 @@
-# nextjs-babel-bug
+# next-lib-bug

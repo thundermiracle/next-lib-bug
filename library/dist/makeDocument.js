@@ -1,27 +1,22 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
+var _interopRequireDefault = require("@babel/runtime-corejs2/helpers/interopRequireDefault");
+
+var _Object$defineProperty = require("@babel/runtime-corejs2/core-js/object/define-property");
+
+_Object$defineProperty(exports, "__esModule", {
   value: true
 });
+
 exports.DefaultNextDocument = exports["default"] = void 0;
 
 var _document = _interopRequireDefault(require("next/document"));
 
-var _extendsMui = _interopRequireDefault(require("./extendsMui"));
+var _extendsDocument = _interopRequireDefault(require("./extendsDocument"));
 
-var _defaultTheme = _interopRequireDefault(require("./defaultTheme"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-// import compose from '../util/compose';
-
-/**
- * Making _document from next/document.
- * Including material-ui.
- * @param {MUITheme} theme
- */
-var makeNextDocument = function makeNextDocument(theme) {
-  return (0, _extendsMui["default"])(theme || _defaultTheme["default"])(_document["default"]);
+var makeNextDocument = function makeNextDocument(applyBootstrap) {
+  var DocumentComponent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _document["default"];
+  return (0, _extendsDocument["default"])(applyBootstrap)(DocumentComponent);
 };
 
 var _default = makeNextDocument;
